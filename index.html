@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kawaii Dashboard</title>
+
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Poppins", sans-serif;
+    }
+
+    body {
+        background: linear-gradient(180deg, #ffd4f2, #e0c2ff);
+        min-height: 100vh;
+        overflow-x: hidden;
+    }
+
+    /* Cute Sparkle Banner */
+    .banner {
+        width: 100%;
+        padding: 35px 0;
+        background: linear-gradient(135deg, #ff9edb, #c59bff);
+        text-align: center;
+        color: white;
+        font-size: 2.3rem;
+        font-weight: 800;
+        letter-spacing: 1px;
+        position: relative;
+        border-bottom-left-radius: 50px;
+        border-bottom-right-radius: 50px;
+        box-shadow: 0 5px 20px rgba(0,0,0,0.15);
+    }
+
+    .sparkle {
+        position: absolute;
+        width: 16px;
+        height: 16px;
+        background: rgba(255,255,255,0.6);
+        border-radius: 50%;
+        animation: float 4s infinite ease-in-out;
+    }
+
+    @keyframes float {
+        0% { transform: translateY(0) scale(1); }
+        50% { transform: translateY(-12px) scale(1.1); }
+        100% { transform: translateY(0) scale(1); }
+    }
+
+    .subtitle {
+        text-align: center;
+        margin-top: 35px;
+        font-size: 1.5rem;
+        color: #7d4a9b;
+        font-weight: 600;
+    }
+
+    /* GRID LAYOUT FOR 4 MEMBERS */
+    .profile-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+        gap: 30px;
+        padding: 50px 40px;
+    }
+
+    /* Cute Bubble Card */
+    .bubble-card {
+        background: #ffe7f8;
+        border-radius: 35px;
+        padding: 25px;
+        text-align: center;
+        box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+        border: 3px solid #ffc7ea;
+        transition: transform .25s ease;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .bubble-card:hover {
+        transform: translateY(-10px);
+    }
+
+    .bubble-card::before {
+        content: "";
+        position: absolute;
+        top: -20px;
+        left: -20px;
+        width: 80px;
+        height: 80px;
+        background: rgba(255,255,255,0.5);
+        border-radius: 50%;
+        filter: blur(12px);
+    }
+
+    .bubble-card img {
+        width: 120px;
+        height: 120px;
+        border-radius: 50%;
+        object-fit: cover;
+        border: 4px solid white;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        margin-top: -10px;
+    }
+
+    .bubble-card h3 {
+        margin-top: 15px;
+        font-size: 1.2rem;
+        color: #3b2147;
+    }
+
+    .bubble-card p {
+        color: #875c99;
+        font-size: .9rem;
+        margin: 6px 0 15px;
+    }
+
+    .btn {
+        padding: 9px 22px;
+        border-radius: 20px;
+        border: none;
+        font-weight: 600;
+        background: #ff95d8;
+        color: white;
+        cursor: pointer;
+        transition: .2s ease-in-out;
+        box-shadow: 0 3px 10px rgba(255,153,214,0.6);
+    }
+
+    .btn:hover {
+        background: #ff6cc8;
+        transform: scale(1.05);
+    }
+</style>
+</head>
+
+<body>
+
+<!-- KAWAII HEADER -->
+<div class="banner">
+    Group 6 Dashboard 
+
+    <div class="sparkle" style="top: 15px; left: 20%; animation-delay: .2s;"></div>
+    <div class="sparkle" style="top: 35px; left: 70%; animation-delay: .5s;"></div>
+    <div class="sparkle" style="top: 10px; left: 50%; animation-delay: .8s;"></div>
+</div>
+
+<h2 class="subtitle">Meet the Cute Members ✨</h2>
+
+<!-- 4 PROFILE CARDS -->
+<div class="profile-grid">
+
+    <div class="bubble-card">
+        <img src="kayki.jpg">
+        <h3>Buentiempo, Francesca</h3>
+        <p>BSIT - 2213</p>
+        <button class="btn" onclick="location.href='kayki.html'">View Profile</button>
+    </div>
+
+    <div class="bubble-card">
+        <img src="mikka.jpg">
+        <h3>Buhat, Mikka</h3>
+        <p>BSIT - 2213</p>
+        <button class="btn" onclick="location.href='mikka.html'">View Profile</button>
+    </div>
+
+    <div class="bubble-card">
+        <img src="alice.jpg">
+        <h3>Pradas, Alice</h3>
+        <p>BSIT - 2213</p>
+        <button class="btn" onclick="location.href='alice.html'">View Profile</button>
+    </div>
+
+    <div class="bubble-card">
+        <img src="marc.jpg">
+        <h3>Seno, Marc Ulysiss</h3>
+        <p>BSIT - 2213</p>
+        <button class="btn" onclick="location.href='kayki.html'">View Profile</button>
+    </div>
+
+</div>
+
+</body>
+</html>
