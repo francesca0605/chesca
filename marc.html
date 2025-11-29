@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kawaii Profile</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+    <style> 
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            background: linear-gradient(180deg, #ffd4f2, #e0c2ff);
+            text-align: center;
+        }
+
+        nav {
+            background: linear-gradient(135deg, #ff9edb, #c59bff);
+            padding: 15px;
+            color: white;
+            font-weight: 600;
+            font-size: 1.1rem;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        nav ul {
+            padding: 0;
+            margin: 0;
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+        }
+
+        nav li {
+            padding: 10px 22px;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: 0.3s ease;
+        }
+
+        nav li:hover {
+            background: rgba(255,255,255,0.4);
+        }
+
+        nav .active {
+            background: white;
+            color: #c259b5;
+        }
+
+        .home-btn {
+            display: inline-block;
+            padding: 10px 20px;
+            background: #ffccd5;
+            color: #fff;
+            font-weight: 600;
+            border-radius: 25px;
+            text-decoration: none;
+            font-family: 'Poppins', sans-serif;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+            margin: 20px auto;
+        }
+
+        .home-btn:hover {
+            background: #ffb3c1; 
+            transform: translateY(-3px);
+            box-shadow: 0 8px 15px rgba(0,0,0,0.2);
+        }
+
+        .profile-img {
+            width: 140px;
+            height: 140px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 5px solid white;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+            margin-top: 20px;
+        }
+
+        h2, h3, h4 {
+            color: #7d4a9b;
+            margin-top: 10px;
+        }
+
+        p {
+            color: #6a4b7a;
+            font-size: 17px;
+            line-height: 1.5;
+        }
+
+        .card {
+            width: 85%;
+            background: #ffe7f8;
+            padding: 25px;
+            margin: 20px auto;
+            border-radius: 25px;
+            border: 3px solid #ffc7ea;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+        }
+
+        .section {
+            padding: 20px;
+        }
+
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <ul>
+            <li class="active" onclick="showSection('home')">HOME</li>
+            <li onclick="showSection('skills')">SKILLS</li>
+            <li onclick="showSection('contact')">CONTACT</li>
+        </ul>
+    </nav>
+
+    <section id="home" class="section">
+        <a href="GROUP3.html" class="home-btn">Home</a>
+        <img src="marc.jpg" alt="Profile Picture" class="profile-img">
+        <h4>Welcome to My Kawaii Profile 🎀</h4>
+        <h2>Marc Ulysiss Seno</h2>
+        <p>I chose IT because I enjoy technology and want to build systems, websites, and apps that help people.✨</p>
+    </section>
+
+    <section id="skills" class="section hidden">
+        <h3>My Skills 💻✨</h3>
+        <div class="card">
+            <ul>
+                <li>Technical Skills</li>
+                <li>Problem Solving</li>
+                <li>Communication Skills</li>
+            </ul>
+        </div>
+    </section>
+
+    <section id="contact" class="section hidden">
+        <h3>Hobbies</h3>
+        <div class="card">
+            <lu>
+                <li>Singing</li>
+                <li>Watching Movie</li>
+                <li>Jogging</li>
+            </lu>
+        </div>
+    </section>
+
+    <script>
+        function showSection(id) {
+            document.getElementById("home").classList.add("hidden");
+            document.getElementById("skills").classList.add("hidden");
+            document.getElementById("contact").classList.add("hidden");
+
+            document.getElementById(id).classList.remove("hidden");
+
+            document.querySelectorAll("nav li").forEach(li => li.classList.remove("active"));
+            document.querySelector(`nav li[onclick="showSection('${id}')"]`).classList.add("active");
+        }
+    </script>
+
+</body>
+</html>
